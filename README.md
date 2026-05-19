@@ -24,7 +24,7 @@ Upload any underwater ROV image or video and get segmentation masks + detection 
 
 ## Sample Predictions
 
-![Sample predictions](assets/val_batch0_pred.jpg)
+![Sample predictions](assets/val_batch0__pred.jpg)
 
 ---
 
@@ -42,13 +42,13 @@ Upload any underwater ROV image or video and get segmentation masks + detection 
 
 ## Training Curves
 
-![Training curves](assets/training_curves.png)
+![Training curves](assets/training-curves.png)
 
 ---
 
 ## Confusion Matrix
 
-![Confusion matrix](assets/confusion_matrix.png)
+![Confusion matrix](assets/confusion-matrix.png)
 
 ---
 
