@@ -96,7 +96,7 @@ marine-trash-detection/
 ## Quick Start
 
 ```bash
-git clone https://github.com/Krishna-Jaiswal/marine-trash-detection.git
+git clone https://github.com/Satyam-Kumar/marine-trash-detection.git
 cd marine-trash-detection
 pip install -r requirements.txt
 python app.py
