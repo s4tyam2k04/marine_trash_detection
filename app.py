@@ -142,7 +142,6 @@ def make_summary(detections):
         cat = "Trash" if cls_name in TRASH_CLASSES else ("ROV" if cls_name == "rov" else "Marine life")
         lines.append(f"- `{cls_name}` ({cat}) — {conf:.0%}")
     return "\n".join(lines)
-
 def predict_image(image):
     if image is None:
         return None, None, "Upload an image to begin."
