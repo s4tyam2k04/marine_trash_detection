@@ -146,7 +146,7 @@ python app.py
 |------|------|---------------|
 | Krishna Jaiswal | Lead Developer | Dataset pipeline, YOLOv8m-seg training, class imbalance analysis, class-specific confidence thresholds, Gradio web app, HF Hub model upload, HF Spaces deployment |
 | Shashank Kumar Tiwari | Data | Dataset download, extraction, folder structure preparation |
-| Satyam Kumar | Evaluation | Results review, confusion matrix analysis, PPT preparation |
+| **Satyam Kumar** | **Evaluation** | Results review, confusion matrix analysis, PPT preparation |
 
 ---
 
