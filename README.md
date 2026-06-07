@@ -1,7 +1,7 @@
-````md
 # 🌊 Life Under Water — Marine Trash Detection
 
-[![Live Demo](https://img.shields.io/badge/🤗%20Live%20Demo-Hugging%20Face-yellow)](https://huggingface.co/spaces/s4tyam2k04/marine_trash_detector)
+[![Live Demo](https://img.shields.io/badge/🤗%20Live%20Demo-Hugging%20Face-yellow)](https://huggingface.co/spaces/Krishna-Jaiswal/marine-trash-detection)
+[![Model](https://img.shields.io/badge/🤗%20Model-Hugging%20Face-blue)](https://huggingface.co/Krishna-Jaiswal/yolov8m-marine-trash)
 [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://python.org)
 [![YOLOv8](https://img.shields.io/badge/Model-YOLOv8m--seg-green)](https://ultralytics.com)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
@@ -16,7 +16,7 @@
 
 Try it instantly — no installation needed:
 
-**[huggingface.co/spaces/s4tyam2k04/marine_trash_detector](https://huggingface.co/spaces/s4tyam2k04/marine_trash_detector)**
+**[huggingface.co/spaces/Krishna-Jaiswal/marine-trash-detection](https://huggingface.co/spaces/Krishna-Jaiswal/marine-trash-detection)**
 
 Upload any underwater ROV image or video and get segmentation masks + detection stats.
 
@@ -56,7 +56,6 @@ Upload any underwater ROV image or video and get segmentation masks + detection 
 
 **TrashCan 1.0** — Instance segmentation dataset of underwater trash from
 JAMSTEC deep-sea ROV cameras.
-
 Source: [University of Minnesota Data Repository](https://conservancy.umn.edu/handle/11299/214865)
 
 **7,212 images | 16 classes | Train: 6,008 | Val: 1,204**
@@ -71,90 +70,83 @@ Source: [University of Minnesota Data Repository](https://conservancy.umn.edu/ha
 
 ## Project Structure
 
-```text
+```
 marine-trash-detection/
-├── app.py                          # Gradio web app deployed on HF Spaces
+├── app.py                          # Gradio web app — deployed on HF Spaces
 ├── requirements.txt                # Dependencies
-├── kaggle_marine_trash.ipynb       # Training notebook
+├── kaggle_marine_trash.ipynb       # Training notebook (Kaggle)
 ├── save_to_hf_kaggle.ipynb         # Upload model to HF Hub
 ├── LICENSE                         # MIT License
 ├── README.md                       # Documentation
 │
-├── assets/
-│   ├── val_batch0_pred.jpg
-│   ├── training_curves.png
-│   ├── confusion_matrix.png
-│   └── class_distribution.png
+├── assets/                         # Training artifacts & visualizations
+│   ├── val_batch0_pred.jpg        # Sample predictions
+│   ├── training_curves.png        # Loss + mAP curves
+│   ├── confusion_matrix.png       # Per-class accuracy
+│   └── class_distribution.png     # Dataset class distribution
 │
-└── examples/
-    ├── sample1.jpg
-    ├── sample2.jpg
-    └── sample_video.mp4
-````
+└── examples/                       # Demo samples for Gradio app
+    ├── sample1.jpg               # Example underwater image 1
+    ├── sample2.jpg               # Example underwater image 2
+    └── sample_video.mp4          # Example underwater video
+```
 
 ---
 
 ## Quick Start
 
 ```bash
-git clone https://github.com/s4tyam2k04/marine-trash-detection.git
+git clone https://github.com/Krishna-Jaiswal/marine-trash-detection.git
 cd marine-trash-detection
-
 pip install -r requirements.txt
-
 python app.py
-```
-
-Open:
-
-```text
-http://localhost:7860
+# Open http://localhost:7860
 ```
 
 ---
 
 ## Training Configuration
 
-| Parameter     | Value                             |
-| ------------- | --------------------------------- |
-| Model         | YOLOv8m-seg (pretrained COCO)     |
-| Optimizer     | SGD + cosine LR decay             |
-| Learning rate | 0.01 → 0.001                      |
-| Epochs        | 75                                |
-| Batch size    | 16                                |
-| Image size    | 640×640                           |
-| Augmentation  | Mosaic, Mixup=0.1, Copy-paste=0.1 |
-| Platform      | Kaggle T4 GPU                     |
+| Parameter | Value |
+|-----------|-------|
+| Model | YOLOv8m-seg (pretrained COCO) |
+| Optimizer | SGD + cosine LR decay |
+| Learning rate | 0.01 → 0.001 |
+| Epochs | 75 |
+| Batch size | 16 |
+| Image size | 640×640 |
+| Augmentation | Mosaic, Mixup=0.1, Copy-paste=0.1 |
+| Platform | Kaggle T4 GPU |
 
 ---
 
 ## Limitations
 
-* **Class imbalance:** ROV class dominates (2,653 instances) vs trash_rubber (113 instances), creating a large class imbalance.
-* **mAP justification:** Underwater environments contain low-light conditions, murky water, motion blur, and occlusions that reduce detection accuracy.
-* **Solution applied:** Class-specific confidence thresholds (ROV: 0.70, rare classes: 0.15–0.20) to balance false positives and false negatives.
-* **Trained on JAMSTEC ROV footage** — performance may vary on different underwater environments and camera systems.
-* **Optimized for seabed debris** rather than floating or suspended waste.
+- **Class imbalance**: ROV class dominates (2,653 instances) vs trash_rubber (113 instances), creating 59:1 ratio. Model tends to overpredict ROV.
+- **mAP justification**: Lower mAP (65.6%) reflects challenging underwater domain — low-light, murky conditions, occlusions. Consistent with underwater detection benchmarks (60-70%).
+- **Solution applied**: Class-specific confidence thresholds (ROV: 0.70, rare classes: 0.15-0.20) to balance false positives/negatives.
+- **Trained on JAMSTEC ROV footage** — performance varies on other camera types/environments.
+- **Optimized for seabed debris** — not floating/suspended trash.
 
 ---
 
 ## Real-world Applications
 
-* Underwater ROV-based ocean cleanup robots
-* Marine pollution monitoring and research
-* Automated seabed debris surveys
-* Supports **UN SDG 14 — Life Below Water**
-* Environmental conservation and sustainability initiatives
+- Underwater ROV-based ocean cleanup robots
+- Marine pollution monitoring and research
+- Automated seabed debris surveys
+- Aligned with **UN SDG 14 — Life Below Water**
+- Same problem domain as **EU SeaClear 2.0** (€9M Horizon Europe project)
 
 ---
 
 ## Team
 
-| Name                  | Role                        | Contributions                                                                                                                                           |
-| --------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Satyam Kumar**      | **Deployment & Evaluation** | Hugging Face Spaces deployment, model testing, evaluation, confusion matrix analysis, documentation, PPT preparation                                    |
-| Krishna Jaiswal       | Lead Developer              | Dataset pipeline, YOLOv8m-seg training, class imbalance analysis, class-specific confidence thresholds, Gradio web app development, HF model deployment |
-| Shashank Kumar Tiwari | Data                        | Dataset download, extraction, preprocessing, folder structure preparation                                                                               |
+| Name | Role | Contributions |
+|------|------|---------------|
+| Krishna Jaiswal | Lead Developer | Dataset pipeline, YOLOv8m-seg training, class imbalance analysis, class-specific confidence thresholds, Gradio web app, HF Hub model upload, HF Spaces deployment |
+| Shashank Kumar Tiwari | Data | Dataset download, extraction, folder structure preparation |
+| Satyam Kumar | Evaluation | Results review, confusion matrix analysis, PPT preparation |
 
 ---
 
@@ -174,6 +166,3 @@ http://localhost:7860
 ## License
 
 MIT License — see [LICENSE](LICENSE) for details.
-
-```
-```
