@@ -16,7 +16,7 @@
 
 Try it instantly — no installation needed:
 
-**[huggingface.co/spaces/Krishna-Jaiswal/marine-trash-detection](https://huggingface.co/spaces/Krishna-Jaiswal/marine-trash-detection)**
+**(https://huggingface.co/spaces/s4tyam2k04/marine_trash_detector)**
 
 Upload any underwater ROV image or video and get segmentation masks + detection stats.
 
