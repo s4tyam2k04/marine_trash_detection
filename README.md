@@ -1,6 +1,6 @@
 # 🌊 Life Under Water — Marine Trash Detection
 
-[![Live Demo]([https://img.shields.io/badge/🤗%20Live%20Demo-Hugging%20Face-yellow)](https://huggingface.co/spaces/Krishna-Jaiswal/marine-trash-detection](https://huggingface.co/spaces/s4tyam2k04/marine_trash_detector))
+[![Live Demo]([https://img.shields.io/badge/🤗%20Live%20Demo-Hugging%20Face-yellow)](https://huggingface.co/spaces/Krishna-Jaiswal/marine-trash-detection])
 [![Model](https://img.shields.io/badge/🤗%20Model-Hugging%20Face-blue)](https://huggingface.co/Krishna-Jaiswal/yolov8m-marine-trash)
 [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://python.org)
 [![YOLOv8](https://img.shields.io/badge/Model-YOLOv8m--seg-green)](https://ultralytics.com)
