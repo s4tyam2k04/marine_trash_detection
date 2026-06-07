@@ -1,6 +1,6 @@
 # 🌊 Life Under Water — Marine Trash Detection
 
-[![Live Demo]([https://img.shields.io/badge/🤗%20Live%20Demo-Hugging%20Face-yellow)](https://huggingface.co/spaces/Krishna-Jaiswal/marine-trash-detection])
+[![Live Demo](https://img.shields.io/badge/🤗%20Live%20Demo-Hugging%20Face-yellow)](https://huggingface.co/spaces/Krishna-Jaiswal/marine-trash-detection)
 [![Model](https://img.shields.io/badge/🤗%20Model-Hugging%20Face-blue)](https://huggingface.co/Krishna-Jaiswal/yolov8m-marine-trash)
 [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://python.org)
 [![YOLOv8](https://img.shields.io/badge/Model-YOLOv8m--seg-green)](https://ultralytics.com)
@@ -16,7 +16,7 @@
 
 Try it instantly — no installation needed:
 
-**(https://huggingface.co/spaces/s4tyam2k04/marine_trash_detector)**
+**[huggingface.co/spaces/s4tyam2k04/marine_trash_detectior](https://huggingface.co/spaces/s4tyam2k04/marine-trash-detectior)**
 
 Upload any underwater ROV image or video and get segmentation masks + detection stats.
 
@@ -24,7 +24,7 @@ Upload any underwater ROV image or video and get segmentation masks + detection 
 
 ## Sample Predictions
 
-![Sample predictions](assets/val_batch0__pred.jpg)
+![Sample predictions](assets/val_batch0_pred.jpg)
 
 ---
 
@@ -42,13 +42,13 @@ Upload any underwater ROV image or video and get segmentation masks + detection 
 
 ## Training Curves
 
-![Training curves](assets/training-curves.png)
+![Training curves](assets/training_curves.png)
 
 ---
 
 ## Confusion Matrix
 
-![Confusion matrix](assets/confusion-matrix.png)
+![Confusion matrix](assets/confusion_matrix.png)
 
 ---
 
@@ -96,7 +96,7 @@ marine-trash-detection/
 ## Quick Start
 
 ```bash
-git clone https://github.com/Satyam-Kumar/marine-trash-detection.git
+git clone https://github.com/Krishna-Jaiswal/marine-trash-detection.git
 cd marine-trash-detection
 pip install -r requirements.txt
 python app.py
